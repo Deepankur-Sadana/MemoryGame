@@ -7,5 +7,6 @@ data class MoveRequest(
     val pointsSoFar: Points,
     val level: Int,
     val movedCard: Card,
-    val visibleCard: Card?
+    val visibleCard: Card?,
+    val timeRemaining: Int
 )

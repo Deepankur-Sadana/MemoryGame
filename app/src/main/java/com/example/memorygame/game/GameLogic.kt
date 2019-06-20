@@ -25,7 +25,9 @@ object GameLogic : Update<GameModel, GameEvent, GameEffect> {
                                 model.currentPoints,
                                 model.currentLevel,
                                 event.card,
-                                model.selectedCard
+                                model.selectedCard,
+                                model.timeLeft
+
                             )
                         )
                     )
