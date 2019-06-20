@@ -25,7 +25,7 @@ object LocalRuleEngine {
             }
 
             if (moveRequest.movedCard.name == moveRequest.visibleCard.name) {
-                val finalPoints = getPoints(moveRequest.level, moveRequest.pointsSoFar)
+                val finalPoints = getPoints(moveRequest.level, moveRequest.pointsSoFar, moveRequest.timeRemaining)
                 return if (finalPoints.points >= getWinningPoints(moveRequest.level)) {//won the game
                     MoveResult(
                         GameResult.WON,
@@ -72,8 +72,23 @@ object LocalRuleEngine {
 
     }
 
-    private fun getPoints(level: Int, currentPoints: Points): Points {
+    private fun getPoints(
+        level: Int,
+        currentPoints: Points,
+        timeRemaining: Int
+    ): Points {
+        val bonusPoints = getBonusPoints(level, currentPoints, timeRemaining)
         return Points(currentPoints.points + 4)
+    }
+
+
+    private fun getBonusPoints(
+        level: Int,
+        currentPoints: Points,
+        timeRemaining: Int
+    ): Int {
+        //add quick move logic here
+        TODO()
     }
 
     private fun getWinningPoints(level: Int): Int {
