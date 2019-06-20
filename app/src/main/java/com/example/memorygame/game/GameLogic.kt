@@ -58,6 +58,12 @@ object GameLogic : Update<GameModel, GameEvent, GameEffect> {
                 )
             }
 
+            is TimerUpEvent -> {
+                next(
+                    model.timeUp()
+                )
+            }
+
 
             else -> TODO()
         }

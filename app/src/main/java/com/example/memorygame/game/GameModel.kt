@@ -78,6 +78,8 @@ data class GameModel(
     }
 
     private fun flipCards(flips: List<FlipAction>): List<Card> {
+
+        // TODO (change from (On^2) to O(n)
         cardList.forEach { card ->
             flips.forEach { flip ->
                 if (card.uId == flip.cardUid) {
@@ -91,5 +93,9 @@ data class GameModel(
 
     fun timerTicked(millisUntilFinished: Long): GameModel =
         copy(timeLeft = (millisUntilFinished / 1000).toInt())
+
+    fun timeUp(): GameModel {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
 }

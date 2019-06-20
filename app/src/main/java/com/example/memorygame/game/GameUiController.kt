@@ -6,6 +6,10 @@ import com.example.memorygame.architechture.mobius.DeferredEventSource
 import com.example.memorygame.game.gametimer.GameTimer
 import com.example.memorygame.game.gametimer.TimerListener
 
+
+//todo this is an architechtural leak
+// Desperate Times;  Desperate measures
+
 class GameUiController(val eventSource: DeferredEventSource<GameEvent>) {
     var gameTimer: GameTimer? = null
     fun notifyGameStarted() {
