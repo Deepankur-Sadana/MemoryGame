@@ -87,8 +87,10 @@ object LocalRuleEngine {
         currentPoints: Points,
         timeRemaining: Int
     ): Int {
+        //TODO (currently assigning 0 points for quick move)
         //add quick move logic here
-        TODO()
+
+        return 0
     }
 
     private fun getWinningPoints(level: Int): Int {
