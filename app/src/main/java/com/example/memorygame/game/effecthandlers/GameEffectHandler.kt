@@ -29,20 +29,16 @@ object GameEffectHandler {
         gitHubApi: GameEngine,
         schedulersProvider: SchedulersProvider
     ): ObservableTransformer<GetResultEffect, GameEvent> {
-        return object : ObservableTransformer<GetResultEffect, GameEvent> {
-            override fun apply(
-                getResultEffect: Observable<GetResultEffect>
-            ): ObservableSource<GameEvent> {
-                return getResultEffect
-                    .flatMapSingle { effect ->
-                        gitHubApi
-                            .compareCards(effect.moveRequest)
-                            .map(GameEffectHandler::mapToGameResultEvent)
-                            .doOnError(Timber::e)
-                            .onErrorReturn { mapToErrorEvent(it) }
-                    }
-                    .subscribeOn(schedulersProvider.io)
-            }
+        return ObservableTransformer<GetResultEffect, GameEvent> { getResultEffect ->
+            getResultEffect
+                .flatMapSingle { effect ->
+                    gitHubApi
+                        .compareCards(effect.moveRequest)
+                        .map(GameEffectHandler::mapToGameResultEvent)
+                        .doOnError(Timber::e)
+                        .onErrorReturn { mapToErrorEvent(it) }
+                }
+                .subscribeOn(schedulersProvider.io)
         }
     }
 
