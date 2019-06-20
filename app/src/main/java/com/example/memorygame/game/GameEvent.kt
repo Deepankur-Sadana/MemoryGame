@@ -29,3 +29,7 @@ data class FlipCardsEvent(
 data class TimerTickedEvent(val millisUntilFinished: Long) : GameEvent()
 
 object TimerUpEvent : GameEvent()
+
+data class PauseGameEvent(val timeLeftMillis: Long)
+
+data class ResumeGameEvent(val timeLeftMillis: Long)
