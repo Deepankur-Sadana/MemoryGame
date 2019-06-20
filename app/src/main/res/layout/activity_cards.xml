@@ -18,7 +18,7 @@
 
 
     <TextView
-            android:id="@+id/timer"
+            android:id="@+id/timerTextView"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:padding="20dp"
@@ -39,7 +39,7 @@
             android:visibility="invisible"/>
 
     <TextView
-            android:id="@+id/start"
+            android:id="@+id/startTextView"
             android:text="start"
             android:textSize="20sp"
             android:textAllCaps="true"
