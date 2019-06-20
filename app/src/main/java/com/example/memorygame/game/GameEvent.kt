@@ -30,6 +30,6 @@ data class TimerTickedEvent(val millisUntilFinished: Long) : GameEvent()
 
 object TimerUpEvent : GameEvent()
 
-data class PauseGameEvent(val timeLeftMillis: Long)
+object PauseGameEvent : GameEvent()
 
-data class ResumeGameEvent(val timeLeftMillis: Long)
+object ResumeGameEvent : GameEvent()

@@ -35,6 +35,11 @@ class CardsActivity : BaseActivity<GameModel, GameEvent, GameEffect>(), GameView
             eventSource.notifyEvent(StartGameEvent)
             uiController.notifyGameStarted()
         }
+
+        startPauseTextView.setOnClickListener{
+            eventSource.notifyEvent(PauseGameEvent)
+        }
+
         adapter = CardsAdapter(emptyList(), this, object : OnCardClickedListener {
             override fun onCardClicked(cardData: Card) {
                 //TODO is this an architechtural leak ????
