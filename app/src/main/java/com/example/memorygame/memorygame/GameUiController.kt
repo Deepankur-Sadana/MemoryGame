@@ -3,8 +3,8 @@ package com.example.memorygame.memorygame
 import android.content.Context
 import android.support.v7.widget.GridLayoutManager
 import com.example.memorygame.architechture.mobius.DeferredEventSource
-import com.example.memorygame.memorygame.timer.GameTimer
-import com.example.memorygame.memorygame.timer.TimerListener
+import com.example.memorygame.memorygame.gametimer.GameTimer
+import com.example.memorygame.memorygame.gametimer.TimerListener
 
 class GameUiController(val eventSource: DeferredEventSource<GameEvent>) {
     var gameTimer: GameTimer? = null

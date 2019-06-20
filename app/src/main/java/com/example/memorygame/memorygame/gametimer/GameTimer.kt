@@ -1,4 +1,4 @@
-package com.example.memorygame.memorygame.timer
+package com.example.memorygame.memorygame.gametimer
 
 import android.os.CountDownTimer
 
