@@ -1,4 +1,4 @@
-package com.example.cards.architechture.threading
+package com.example.memorygame.architechture.threading
 
 import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers

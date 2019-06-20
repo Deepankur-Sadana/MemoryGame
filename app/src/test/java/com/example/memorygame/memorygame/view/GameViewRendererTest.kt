@@ -1,8 +1,8 @@
 package com.example.memorygame.memorygame.view
 
-import com.example.memorygame.game.GameModel
-import com.example.memorygame.game.ui.GameView
-import com.example.memorygame.game.ui.GameViewRenderer
+import com.example.memorygame.memorygame.GameModel
+import com.example.memorygame.memorygame.ui.GameView
+import com.example.memorygame.memorygame.ui.GameViewRenderer
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.verifyNoMoreInteractions

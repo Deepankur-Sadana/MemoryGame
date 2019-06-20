@@ -1,6 +1,5 @@
 package com.example.memorygame.memorygame
 
-import com.example.memorygame.game.*
 import com.spotify.mobius.test.UpdateSpec
 
 
