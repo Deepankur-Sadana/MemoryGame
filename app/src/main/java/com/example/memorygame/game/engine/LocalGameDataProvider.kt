@@ -53,9 +53,21 @@ class LocalGameDataProvider : GameDataProvider, Parcelable {
             list.add(card6)
         }
 
-        if(currentLevel >=3 ){
 
+        if(currentLevel >=3 ){
+            val card7 = Card(
+                7,
+                CardState.HIDDEN,
+                "https://media1.popsugar-assets.com/files/thumbor/1KE5g1bOcl8yT_Obep8s1lr6AHA/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2019/03/19/632/n/45185919/c982fcf55c90f8585e44c8.77903708_/i/Pool-Party-Playlist.jpg",
+                "pool"
+            )
+            list.add(card7)
         }
         return list
+    }
+
+
+    fun addtilesforLevel3(){
+
     }
 }
