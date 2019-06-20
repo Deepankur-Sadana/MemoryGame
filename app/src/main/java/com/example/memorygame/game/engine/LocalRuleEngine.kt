@@ -4,7 +4,7 @@ import com.example.memorygame.game.model.CardState
 import com.example.memorygame.game.model.Points
 
 
-object RuleEngine {
+object LocalRuleEngine {
 
 
     fun getResult(moveRequest: MoveRequest): MoveResult {

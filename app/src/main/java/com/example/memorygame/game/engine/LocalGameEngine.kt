@@ -6,6 +6,6 @@ import io.reactivex.Single
 class LocalGameEngine : GameEngine {
 
     override fun compareCards(moveRequest: MoveRequest): Single<MoveResult> {
-        return Single.just(RuleEngine.getResult(moveRequest))
+        return Single.just(LocalRuleEngine.getResult(moveRequest))
     }
 }
