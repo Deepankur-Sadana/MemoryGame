@@ -66,6 +66,12 @@ object GameLogic : Update<GameModel, GameEvent, GameEffect> {
                 )
             }
 
+            is PauseGameEvent -> {
+                next(
+                    model.pauseGame()
+                )
+            }
+
 
             else -> TODO()
         }

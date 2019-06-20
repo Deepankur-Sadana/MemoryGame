@@ -98,4 +98,8 @@ data class GameModel(
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
+    fun pauseGame(): GameModel {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
 }
