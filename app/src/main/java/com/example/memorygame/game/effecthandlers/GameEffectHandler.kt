@@ -5,8 +5,6 @@ import com.example.memorygame.game.engine.GameResult
 import com.example.memorygame.game.engine.MoveResult
 import com.example.memorygame.game.*
 import com.spotify.mobius.rx2.RxMobius
-import io.reactivex.Observable
-import io.reactivex.ObservableSource
 import io.reactivex.ObservableTransformer
 import timber.log.Timber
 
@@ -29,14 +27,14 @@ object GameEffectHandler {
         gitHubApi: GameEngine,
         schedulersProvider: SchedulersProvider
     ): ObservableTransformer<GetResultEffect, GameEvent> {
-        return ObservableTransformer<GetResultEffect, GameEvent> { getResultEffect ->
+        return ObservableTransformer { getResultEffect ->
             getResultEffect
                 .flatMapSingle { effect ->
                     gitHubApi
                         .compareCards(effect.moveRequest)
                         .map(GameEffectHandler::mapToGameResultEvent)
                         .doOnError(Timber::e)
-                        .onErrorReturn { mapToErrorEvent(it) }
+                        .onErrorReturn { mapToErrorEvent() }
                 }
                 .subscribeOn(schedulersProvider.io)
         }
@@ -59,6 +57,6 @@ object GameEffectHandler {
         return GameCompletedEvent
     }
 
-    private fun mapToErrorEvent(throwable: Throwable): GameEvent =
+    private fun mapToErrorEvent(): GameEvent =
         UnableToFetchResultEvent
 }
